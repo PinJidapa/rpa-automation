@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.11.4 on darwin)" generated="20230821 18:53:50.668" rpa="false" schemaversion="4">
+<suite id="s1" name="Demo" source="/Users/pinpinn/rpa-automation/Testcases/demo.robot">
+<test id="s1-t1" name="Login" line="6">
+<kw name="Open Browser And Sign In With Username And Password" library="LoginKeyword">
+<arg>${username1}</arg>
+<arg>${password1}</arg>
+<msg timestamp="20230821 18:53:50.747" level="FAIL">Variable '${username1}' not found. Did you mean:
+    ${username}</msg>
+<status status="FAIL" starttime="20230821 18:53:50.746" endtime="20230821 18:53:50.747"/>
+</kw>
+<status status="FAIL" starttime="20230821 18:53:50.746" endtime="20230821 18:53:50.747">Variable '${username1}' not found. Did you mean:
+    ${username}</status>
+</test>
+<status status="FAIL" starttime="20230821 18:53:50.669" endtime="20230821 18:53:50.747"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Demo">Demo</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230821 18:53:50.678" level="ERROR">Error in file '/Users/pinpinn/rpa-automation/Page/LoginPage.robot' on line 2: Resource file '../Resources/Imports.robot' does not exist.</msg>
+<msg timestamp="20230821 18:53:50.746" level="ERROR">Error in file '/Users/pinpinn/rpa-automation/Testcases/demo.robot' on line 3: Processing variable file '/Users/pinpinn/rpa-automation/Resourses/TestData/sit/UserLogin.yaml' failed: Using YAML variable files requires PyYAML module to be installed. Typically you can install it by running `pip install pyyaml`.</msg>
+</errors>
+</robot>
