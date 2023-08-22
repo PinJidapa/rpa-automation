@@ -1,48 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.4 on darwin)" generated="20230822 10:18:26.659" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.4 on darwin)" generated="20230822 10:39:49.916" rpa="false" schemaversion="4">
 <suite id="s1" name="Demo" source="/Users/pinpinn/rpa-automation/Testcases/demo.robot">
 <test id="s1-t1" name="Login" line="7">
 <kw name="Open Browser And Sign In With Username And Password" library="LoginKeyword">
-<arg>${username1}</arg>
-<arg>documate1234@Appman</arg>
+<arg>${username}</arg>
+<arg>${password}</arg>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230822 10:18:26.734" level="INFO">Opening browser 'chrome' to base url 'https://documate-sit.appman.co.th/'.</msg>
-<status status="PASS" starttime="20230822 10:18:26.734" endtime="20230822 10:18:29.284"/>
+<msg timestamp="20230822 10:39:49.991" level="INFO">Opening browser 'chrome' to base url 'https://documate-sit.appman.co.th/'.</msg>
+<status status="PASS" starttime="20230822 10:39:49.991" endtime="20230822 10:39:53.055"/>
 </kw>
 <kw name="Enter Username" library="LoginPage">
 <arg>${username}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${username}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230822 10:18:29.285" endtime="20230822 10:18:33.958"/>
+<status status="PASS" starttime="20230822 10:39:53.056" endtime="20230822 10:39:57.091"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${username}</arg>
 <arg>${value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230822 10:18:33.960" level="INFO">Typing text 'contact@appman.co.th' into text field '//*[@name="username"]'.</msg>
-<status status="PASS" starttime="20230822 10:18:33.959" endtime="20230822 10:18:34.053"/>
+<msg timestamp="20230822 10:39:57.091" level="INFO">Typing text '//*[@name="username"]' into text field '//*[@name="username"]'.</msg>
+<status status="PASS" starttime="20230822 10:39:57.091" endtime="20230822 10:39:57.159"/>
 </kw>
-<status status="PASS" starttime="20230822 10:18:29.285" endtime="20230822 10:18:34.053"/>
+<status status="PASS" starttime="20230822 10:39:53.056" endtime="20230822 10:39:57.160"/>
 </kw>
 <kw name="Enter Password" library="LoginPage">
 <arg>${password}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${password}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230822 10:18:34.054" endtime="20230822 10:18:34.063"/>
+<status status="PASS" starttime="20230822 10:39:57.160" endtime="20230822 10:39:57.172"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${password}</arg>
 <arg>${value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230822 10:18:34.064" level="INFO">Typing text 'documate1234@Appman' into text field '//*[@name="password"]'.</msg>
-<status status="PASS" starttime="20230822 10:18:34.064" endtime="20230822 10:18:34.101"/>
+<msg timestamp="20230822 10:39:57.172" level="INFO">Typing text '//*[@name="password"]' into text field '//*[@name="password"]'.</msg>
+<status status="PASS" starttime="20230822 10:39:57.172" endtime="20230822 10:39:57.206"/>
 </kw>
-<status status="PASS" starttime="20230822 10:18:34.053" endtime="20230822 10:18:34.101"/>
+<status status="PASS" starttime="20230822 10:39:57.160" endtime="20230822 10:39:57.206"/>
 </kw>
 <kw name="Click Sign In Button" library="LoginPage">
 <kw name="Run Until Keyword Succeed" library="Utils">
@@ -58,20 +58,20 @@
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${args}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230822 10:18:34.104" level="INFO">Clicking element '//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/form[1]/button[1]'.</msg>
-<status status="PASS" starttime="20230822 10:18:34.104" endtime="20230822 10:18:34.129"/>
+<msg timestamp="20230822 10:39:57.209" level="INFO">Clicking element '//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/form[1]/button[1]'.</msg>
+<status status="PASS" starttime="20230822 10:39:57.208" endtime="20230822 10:39:57.234"/>
 </kw>
-<status status="PASS" starttime="20230822 10:18:34.101" endtime="20230822 10:18:34.129"/>
+<status status="PASS" starttime="20230822 10:39:57.207" endtime="20230822 10:39:57.234"/>
 </kw>
-<status status="PASS" starttime="20230822 10:18:34.101" endtime="20230822 10:18:34.129"/>
+<status status="PASS" starttime="20230822 10:39:57.206" endtime="20230822 10:39:57.234"/>
 </kw>
-<status status="PASS" starttime="20230822 10:18:34.101" endtime="20230822 10:18:34.129"/>
+<status status="PASS" starttime="20230822 10:39:57.206" endtime="20230822 10:39:57.234"/>
 </kw>
-<status status="PASS" starttime="20230822 10:18:26.734" endtime="20230822 10:18:34.129"/>
+<status status="PASS" starttime="20230822 10:39:49.991" endtime="20230822 10:39:57.234"/>
 </kw>
-<status status="PASS" starttime="20230822 10:18:26.734" endtime="20230822 10:18:34.129"/>
+<status status="PASS" starttime="20230822 10:39:49.991" endtime="20230822 10:39:57.235"/>
 </test>
-<status status="PASS" starttime="20230822 10:18:26.659" endtime="20230822 10:18:34.129"/>
+<status status="PASS" starttime="20230822 10:39:49.917" endtime="20230822 10:39:57.235"/>
 </suite>
 <statistics>
 <total>

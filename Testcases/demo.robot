@@ -1,10 +1,11 @@
 *** Settings ***
 Resource     ../Resourses/Imports.robot
 Resource     ../Keywords/LoginKeyword.robot
-Resource    ../Resourses/TestData/sit/UserLogin.robot
+Resource    ../Resourses/TestData/${env}/UserLogin.robot
 
 *** Test Cases ***
-Login
+TS-001 Verify Upload Document Page
     Open Browser And Sign In With Username And Password
-    ...    ${username1}
-    ...    documate1234@Appman
+    ...    ${username}
+    ...    ${password}
+    
