@@ -1,5 +1,4 @@
 *** Settings ***
-Resource   ../Resources/Imports.robot
 Resource    ../Keywords/Utils.robot
 Library           SeleniumLibrary
 

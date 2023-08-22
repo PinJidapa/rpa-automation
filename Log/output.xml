@@ -1,31 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.4 on darwin)" generated="20230821 18:53:50.668" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.4 on darwin)" generated="20230822 10:18:26.659" rpa="false" schemaversion="4">
 <suite id="s1" name="Demo" source="/Users/pinpinn/rpa-automation/Testcases/demo.robot">
-<test id="s1-t1" name="Login" line="6">
+<test id="s1-t1" name="Login" line="7">
 <kw name="Open Browser And Sign In With Username And Password" library="LoginKeyword">
 <arg>${username1}</arg>
-<arg>${password1}</arg>
-<msg timestamp="20230821 18:53:50.747" level="FAIL">Variable '${username1}' not found. Did you mean:
-    ${username}</msg>
-<status status="FAIL" starttime="20230821 18:53:50.746" endtime="20230821 18:53:50.747"/>
+<arg>documate1234@Appman</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230822 10:18:26.734" level="INFO">Opening browser 'chrome' to base url 'https://documate-sit.appman.co.th/'.</msg>
+<status status="PASS" starttime="20230822 10:18:26.734" endtime="20230822 10:18:29.284"/>
 </kw>
-<status status="FAIL" starttime="20230821 18:53:50.746" endtime="20230821 18:53:50.747">Variable '${username1}' not found. Did you mean:
-    ${username}</status>
+<kw name="Enter Username" library="LoginPage">
+<arg>${username}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${username}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230822 10:18:29.285" endtime="20230822 10:18:33.958"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${username}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230822 10:18:33.960" level="INFO">Typing text 'contact@appman.co.th' into text field '//*[@name="username"]'.</msg>
+<status status="PASS" starttime="20230822 10:18:33.959" endtime="20230822 10:18:34.053"/>
+</kw>
+<status status="PASS" starttime="20230822 10:18:29.285" endtime="20230822 10:18:34.053"/>
+</kw>
+<kw name="Enter Password" library="LoginPage">
+<arg>${password}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${password}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230822 10:18:34.054" endtime="20230822 10:18:34.063"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${password}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230822 10:18:34.064" level="INFO">Typing text 'documate1234@Appman' into text field '//*[@name="password"]'.</msg>
+<status status="PASS" starttime="20230822 10:18:34.064" endtime="20230822 10:18:34.101"/>
+</kw>
+<status status="PASS" starttime="20230822 10:18:34.053" endtime="20230822 10:18:34.101"/>
+</kw>
+<kw name="Click Sign In Button" library="LoginPage">
+<kw name="Run Until Keyword Succeed" library="Utils">
+<arg>Click Element</arg>
+<arg>${signInBtn}</arg>
+<doc>Run keyword until it succeeds or timeout is reached</doc>
+<kw name="Wait Until Keyword Succeeds" library="BuiltIn">
+<arg>10s</arg>
+<arg>1s</arg>
+<arg>${keyword}</arg>
+<arg>${args}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${args}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230822 10:18:34.104" level="INFO">Clicking element '//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/form[1]/button[1]'.</msg>
+<status status="PASS" starttime="20230822 10:18:34.104" endtime="20230822 10:18:34.129"/>
+</kw>
+<status status="PASS" starttime="20230822 10:18:34.101" endtime="20230822 10:18:34.129"/>
+</kw>
+<status status="PASS" starttime="20230822 10:18:34.101" endtime="20230822 10:18:34.129"/>
+</kw>
+<status status="PASS" starttime="20230822 10:18:34.101" endtime="20230822 10:18:34.129"/>
+</kw>
+<status status="PASS" starttime="20230822 10:18:26.734" endtime="20230822 10:18:34.129"/>
+</kw>
+<status status="PASS" starttime="20230822 10:18:26.734" endtime="20230822 10:18:34.129"/>
 </test>
-<status status="FAIL" starttime="20230821 18:53:50.669" endtime="20230821 18:53:50.747"/>
+<status status="PASS" starttime="20230822 10:18:26.659" endtime="20230822 10:18:34.129"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Demo">Demo</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Demo">Demo</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20230821 18:53:50.678" level="ERROR">Error in file '/Users/pinpinn/rpa-automation/Page/LoginPage.robot' on line 2: Resource file '../Resources/Imports.robot' does not exist.</msg>
-<msg timestamp="20230821 18:53:50.746" level="ERROR">Error in file '/Users/pinpinn/rpa-automation/Testcases/demo.robot' on line 3: Processing variable file '/Users/pinpinn/rpa-automation/Resourses/TestData/sit/UserLogin.yaml' failed: Using YAML variable files requires PyYAML module to be installed. Typically you can install it by running `pip install pyyaml`.</msg>
 </errors>
 </robot>
