@@ -1,3 +1,6 @@
 {
-  "recommendations": ["d-biehl.robotcode"]
+  "recommendations": [
+    "d-biehl.robotcode",
+    "donjayamanne.python-extension-pack"
+  ]
 }
