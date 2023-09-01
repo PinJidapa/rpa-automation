@@ -9,6 +9,9 @@ ${SelectDocumentInput}   //*[@id="document-autocomplete"]
 ${SubmitBtn}    //body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/button[1]
 ${UploadArea}    //body/div[@id='root']/div[2]/div[2]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/input[1]
 ${DocumentInputDropDown}    //*[@id="root"]/div[2]/div[2]/div/div/div[1]/div/div[1]/div[1]/div/div/div/div/button
+${LoadingIcon}     //*[@id="table-component"]/tbody/tr[1]/td[5]/div/span
+${FirstEditButton}    //tbody/tr[1]/td[6]/div[1]/button[1]
+
 *** Keywords ***
 Verify Document Page
     Wait Until Element Is Visible    ${DocumentLabel}    15s
@@ -25,3 +28,13 @@ Select Document Type
 
 Upload Document File
     Choose File    ${UploadArea}      ${EXECDIR}/Resourses/TestData/bookBank/bookbank1.jpg
+
+Click Submit Button
+    Run Until Keyword Succeed  Click Element    ${SubmitBtn}
+    Sleep    2s
+    Run Keyword And Ignore Error    Scroll Element Into View    ${LoadingIcon}
+    Wait Until Element Is Visible    ${LoadingIcon}   10s
+    Wait Until Element Is Enabled    ${FirstEditButton}    30s
+    Click Element    ${FirstEditButton}
+
+

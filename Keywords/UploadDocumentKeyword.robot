@@ -4,7 +4,11 @@ Resource    ../Page/UploadDocumentPage.robot
 
 *** Keywords ***
 Upload Document On Document Page
+    [Arguments]    ${documentType}
     Verify Document Page
-    Select Document Type     Bank book
+    Select Document Type     ${documentType}
     Upload Document File
+    Click Submit Button
+    Sleep    10s
+
 
