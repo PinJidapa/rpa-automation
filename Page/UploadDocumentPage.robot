@@ -17,6 +17,7 @@ Verify Document Page
 
 Select Document Type
     [Arguments]   ${value}
+    [Documentation]   Select Document Type
     Wait Until Element Is Visible    ${DocumentInputDropDown}    15s
     Wait Until Element Is Visible    ${SelectDocumentInput}    15s
     Input Text    ${SelectDocumentInput}    ${value}
@@ -24,6 +25,3 @@ Select Document Type
 
 Upload Document File
     Choose File    ${UploadArea}      ${EXECDIR}/Resourses/TestData/bookBank/bookbank1.jpg
-    Sleep     100
-    # Run Keyword And Ignore Error    Scroll Element Into View    ${inputBookBank}
-    # Choose File    ${inputBookBank}    ${EXECDIR}/Resources/Assets/bankbook.png
