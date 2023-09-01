@@ -1,48 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.1.1 (Python 3.11.4 on darwin)" generated="20230822 10:39:49.916" rpa="false" schemaversion="4">
+<robot generator="Robot 6.1.1 (Python 3.11.4 on darwin)" generated="20230901 10:30:12.111" rpa="false" schemaversion="4">
 <suite id="s1" name="Demo" source="/Users/pinpinn/rpa-automation/Testcases/demo.robot">
-<test id="s1-t1" name="Login" line="7">
+<test id="s1-t1" name="TS-001 Verify Upload Document Page" line="8">
 <kw name="Open Browser And Sign In With Username And Password" library="LoginKeyword">
-<arg>${username}</arg>
-<arg>${password}</arg>
+<arg>${username1}</arg>
+<arg>${password1}</arg>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230822 10:39:49.991" level="INFO">Opening browser 'chrome' to base url 'https://documate-sit.appman.co.th/'.</msg>
-<status status="PASS" starttime="20230822 10:39:49.991" endtime="20230822 10:39:53.055"/>
+<msg timestamp="20230901 10:30:12.186" level="INFO">Opening browser 'chrome' to base url 'https://documate-sit.appman.co.th/'.</msg>
+<status status="PASS" starttime="20230901 10:30:12.186" endtime="20230901 10:30:14.399"/>
 </kw>
 <kw name="Enter Username" library="LoginPage">
 <arg>${username}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${username}</arg>
+<arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230822 10:39:53.056" endtime="20230822 10:39:57.091"/>
+<status status="PASS" starttime="20230901 10:30:14.400" endtime="20230901 10:30:16.299"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${username}</arg>
 <arg>${value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230822 10:39:57.091" level="INFO">Typing text '//*[@name="username"]' into text field '//*[@name="username"]'.</msg>
-<status status="PASS" starttime="20230822 10:39:57.091" endtime="20230822 10:39:57.159"/>
+<msg timestamp="20230901 10:30:16.300" level="INFO">Typing text 'contact@appman.co.th' into text field '//*[@name="username"]'.</msg>
+<status status="PASS" starttime="20230901 10:30:16.299" endtime="20230901 10:30:16.388"/>
 </kw>
-<status status="PASS" starttime="20230822 10:39:53.056" endtime="20230822 10:39:57.160"/>
+<status status="PASS" starttime="20230901 10:30:14.399" endtime="20230901 10:30:16.388"/>
 </kw>
 <kw name="Enter Password" library="LoginPage">
 <arg>${password}</arg>
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${password}</arg>
+<arg>10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230822 10:39:57.160" endtime="20230822 10:39:57.172"/>
+<status status="PASS" starttime="20230901 10:30:16.389" endtime="20230901 10:30:16.398"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>${password}</arg>
 <arg>${value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230822 10:39:57.172" level="INFO">Typing text '//*[@name="password"]' into text field '//*[@name="password"]'.</msg>
-<status status="PASS" starttime="20230822 10:39:57.172" endtime="20230822 10:39:57.206"/>
+<msg timestamp="20230901 10:30:16.399" level="INFO">Typing text 'documate1234@Appman' into text field '//*[@name="password"]'.</msg>
+<status status="PASS" starttime="20230901 10:30:16.399" endtime="20230901 10:30:16.434"/>
 </kw>
-<status status="PASS" starttime="20230822 10:39:57.160" endtime="20230822 10:39:57.206"/>
+<status status="PASS" starttime="20230901 10:30:16.388" endtime="20230901 10:30:16.434"/>
 </kw>
 <kw name="Click Sign In Button" library="LoginPage">
 <kw name="Run Until Keyword Succeed" library="Utils">
@@ -58,20 +60,73 @@
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>${args}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230822 10:39:57.209" level="INFO">Clicking element '//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/form[1]/button[1]'.</msg>
-<status status="PASS" starttime="20230822 10:39:57.208" endtime="20230822 10:39:57.234"/>
+<msg timestamp="20230901 10:30:16.437" level="INFO">Clicking element '//body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/form[1]/button[1]'.</msg>
+<status status="PASS" starttime="20230901 10:30:16.436" endtime="20230901 10:30:16.467"/>
 </kw>
-<status status="PASS" starttime="20230822 10:39:57.207" endtime="20230822 10:39:57.234"/>
+<status status="PASS" starttime="20230901 10:30:16.435" endtime="20230901 10:30:16.468"/>
 </kw>
-<status status="PASS" starttime="20230822 10:39:57.206" endtime="20230822 10:39:57.234"/>
+<status status="PASS" starttime="20230901 10:30:16.434" endtime="20230901 10:30:16.468"/>
 </kw>
-<status status="PASS" starttime="20230822 10:39:57.206" endtime="20230822 10:39:57.234"/>
+<status status="PASS" starttime="20230901 10:30:16.434" endtime="20230901 10:30:16.468"/>
 </kw>
-<status status="PASS" starttime="20230822 10:39:49.991" endtime="20230822 10:39:57.234"/>
+<status status="PASS" starttime="20230901 10:30:12.186" endtime="20230901 10:30:16.468"/>
 </kw>
-<status status="PASS" starttime="20230822 10:39:49.991" endtime="20230822 10:39:57.235"/>
+<kw name="Upload Document On Document Page" library="UploadDocumentKeyword">
+<kw name="Verify Document Page" library="UploadDocumentPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${DocumentLabel}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230901 10:30:16.468" endtime="20230901 10:30:20.240"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SelectDocumentTypeLable}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230901 10:30:20.240" endtime="20230901 10:30:20.254"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SubmitBtn}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230901 10:30:20.254" endtime="20230901 10:30:20.263"/>
+</kw>
+<status status="PASS" starttime="20230901 10:30:16.468" endtime="20230901 10:30:20.263"/>
+</kw>
+<kw name="Select Document Type" library="UploadDocumentPage">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${SelectDocumentTypeDropDown}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230901 10:30:20.263" endtime="20230901 10:30:20.271"/>
+</kw>
+<kw name="Input Text Using JavaScript Id" library="Utils">
+<arg>document-autocomplete</arg>
+<arg>hello</arg>
+<doc>Finds the input elemant and inputs text into it</doc>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>var el = document.getElementById("${ID}");el.value="${Text}";el.dispatchEvent(new Event("input"));</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20230901 10:30:20.272" level="INFO">Executing JavaScript:
+var el = document.getElementById("document-autocomplete");el.value="hello";el.dispatchEvent(new Event("input"));
+Without any arguments.</msg>
+<status status="PASS" starttime="20230901 10:30:20.272" endtime="20230901 10:30:20.274"/>
+</kw>
+<status status="PASS" starttime="20230901 10:30:20.271" endtime="20230901 10:30:20.274"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>10</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20230901 10:30:30.274" level="INFO">Slept 10 seconds</msg>
+<status status="PASS" starttime="20230901 10:30:20.274" endtime="20230901 10:30:30.274"/>
+</kw>
+<status status="PASS" starttime="20230901 10:30:20.263" endtime="20230901 10:30:30.274"/>
+</kw>
+<status status="PASS" starttime="20230901 10:30:16.468" endtime="20230901 10:30:30.274"/>
+</kw>
+<status status="PASS" starttime="20230901 10:30:12.186" endtime="20230901 10:30:30.274"/>
 </test>
-<status status="PASS" starttime="20230822 10:39:49.917" endtime="20230822 10:39:57.235"/>
+<status status="PASS" starttime="20230901 10:30:12.112" endtime="20230901 10:30:30.275"/>
 </suite>
 <statistics>
 <total>

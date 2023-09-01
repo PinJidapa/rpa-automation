@@ -14,6 +14,11 @@ Run Until Keyword Succeed
     ...    Run keyword until it succeeds or timeout is reached
     Wait Until Keyword Succeeds    10s    1s    ${keyword}    ${args}
     
+Input Text Using JavaScript Id
+    [Arguments]    ${ID}    ${Text}
+    [Documentation]
+    ...     Finds the input elemant and inputs text into it
+    Execute Javascript   var el = document.getElementById("${ID}");el.value="${Text}";el.dispatchEvent(new Event("input"));
 
 Get Child Webelements
     [Arguments]    ${locator}

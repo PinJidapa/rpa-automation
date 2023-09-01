@@ -1,3 +1,3 @@
 *** Variables ***
-${username}    contact@appman.co.th
-${password}    documate1234@Appman
+${username1}    contact@appman.co.th
+${password1}    documate1234@Appman

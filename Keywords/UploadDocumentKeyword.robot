@@ -3,9 +3,8 @@ Library     SeleniumLibrary
 Resource    ../Page/UploadDocumentPage.robot
 
 *** Keywords ***
-Upload Document
-    [Arguments]   ${DocumentType}
+Upload Document On Document Page
     Verify Document Page
-    Select Document Type    ${DocumentType}
-    Upload Document File
+    Select Document Type
+    # Upload Document File
 

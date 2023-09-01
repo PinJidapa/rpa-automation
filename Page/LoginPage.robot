@@ -10,12 +10,12 @@ ${signInBtn}    //body/div[@id='root']/div[1]/div[1]/div[2]/div[1]/form[1]/butto
 *** Keywords ***
 Enter Username
     [Arguments]   ${value}
-    Wait Until Element Is Visible    ${username}
+    Wait Until Element Is Visible    ${username}    10s
     Input Text    ${username}    ${value}
 
 Enter Password
     [Arguments]   ${value}
-    Wait Until Element Is Visible    ${password}
+    Wait Until Element Is Visible    ${password}    10s
     Input Text    ${password}    ${value}
 
 Click Sign In Button
