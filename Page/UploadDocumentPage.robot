@@ -31,6 +31,8 @@ Upload Document File
 
 Click Submit Button
     Run Until Keyword Succeed  Click Element    ${SubmitBtn}
+    
+Click Review The Document
     Sleep    2s
     Run Keyword And Ignore Error    Scroll Element Into View    ${LoadingIcon}
     Wait Until Element Is Visible    ${LoadingIcon}   10s

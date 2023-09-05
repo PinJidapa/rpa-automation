@@ -11,4 +11,3 @@ TS-001 Verify Upload Document Page
     ...    ${password1}
     Upload Document On Document Page
     ...    Bank book
-    

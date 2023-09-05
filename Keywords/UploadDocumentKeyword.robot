@@ -9,6 +9,6 @@ Upload Document On Document Page
     Select Document Type     ${documentType}
     Upload Document File
     Click Submit Button
-    Sleep    10s
+    Click Review The Document
 
 
