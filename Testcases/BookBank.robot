@@ -2,6 +2,7 @@
 Resource     ../Resourses/Imports.robot
 Resource     ../Keywords/LoginKeyword.robot
 Resource    ../Keywords/UploadDocumentKeyword.robot
+Resource    ../Keywords/BankBookEditorKeyword.robot
 Resource    ../Resourses/TestData/${env}/UserLogin.robot
 
 *** Test Cases ***
@@ -11,3 +12,5 @@ TS-001 Verify Upload Document Page
     ...    ${password1}
     Upload Document On Document Page
     ...    Bank book
+    Verify Element In Book Bank Page
+    Input Book Bank Detail
