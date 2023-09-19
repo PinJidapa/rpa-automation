@@ -50,4 +50,3 @@ Click Download Excel
     Wait Until Element Is Enabled    ${editButton}    30s
     Click Element    ${editButton}
     Run Until Keyword Succeed  Click Element    ${downloadToExcelButton} 
-    Sleep    10s
