@@ -13,6 +13,7 @@ ${loadingIcon}     //*[@id="table-component"]/tbody/tr[1]/td[5]/div/span
 ${firstEditButton}    //tbody/tr[1]/td[6]/div[1]/button[1]
 ${editButton}    //tbody/tr[1]/td[6]/div[1]/button[2]/*[1]
 ${completeButton}        //tbody/tr[1]/td[5]/div[1]/*[1]
+${downloadToExcelButton}    //p[contains(text(),'Download Excel')]
 
 
 *** Keywords ***
@@ -45,5 +46,9 @@ Click Review The Document
 Check The Status Change To Complete
     # Run Keyword And Ignore Error    Scroll Element Into View    ${editButton}
     Wait Until Element Is Visible    ${completeButton}    10s
+  
+Click Download Excel
     Wait Until Element Is Enabled    ${editButton}    30s
     Click Element    ${editButton}
+    Run Until Keyword Succeed  Click Element    ${downloadToExcelButton} 
+    Sleep    10s

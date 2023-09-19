@@ -11,3 +11,4 @@ Verify Element In Book Bank Page
     Select Language For BookBank And Verify The Field    ${language2}
     Click Submit Button On editor Page
     Check The Status Change To Complete
+    Click Download Excel
