@@ -14,7 +14,6 @@ ${accountNameFieldTitleTH}    //p[contains(text(),'ชื่อบัญชี')
 ${bankNameEnFieldTitleTH}    //p[contains(text(),'ชื่อธนาคาร (อังกฤษ)')]
 ${bankNameThFieldTitleTH}    //p[contains(text(),'ชื่อธนาคาร (ไทย)')]
 ${accountNoFieldTitleTH}    //p[contains(text(),'เลขที่บัญชี')]
-
 #Eng
 ${bankSectionEN}    //button[@id='Bank']
 ${bankBookSectionEN}    //button[@id='Bank Book']
@@ -24,16 +23,12 @@ ${accountNameFieldTitleEN}    //p[contains(text(),'Account Name')]
 ${bankNameEnFieldTitleEN}    //p[contains(text(),'Bank Name (EN)')]
 ${bankNameThFieldTitleEN}    //p[contains(text(),'Bank Name (TH)')]
 ${accountNoFieldTitleEN}    //p[contains(text(),'Account Number')]
-
-#Field Thai
+#Thai Field 
 ${bankCodeFieldEN}        //textarea[@data-label="Bank Code"]
 ${accuntNameFieldEN}        //textarea[@data-label="Account Name"]
-
-#Field Eng
+#Eng Field 
 ${bankCodeFieldTH}        //textarea[@data-label="ชื่อธนาคาร"]
 ${accuntNameFieldTH}        //textarea[@data-label="ชื่อบัญชี"]
-
-${submitBtn}    //*[@id="extracttion-submit"]
 
 *** Keywords ***
 
@@ -49,27 +44,27 @@ Select Language For BookBank And Verify The Field
 
 Verify The Field In Bank Book TH
     Select Thai Language
-    Wait Until Element Is Visible    ${bankBookTitle}    20s
-    Wait Until Element Is Visible    ${bankSectionTH}    20s
-    Wait Until Element Is Visible    ${bankBookSectionTH}    20s
-    Wait Until Element Is Visible    ${bankCodeFieldTitleTH}    10s
-    Wait Until Element Is Visible    ${branchFieldTitleTH}    10s
-    Wait Until Element Is Visible    ${accountNameFieldTitleTH}    10s    
-    Wait Until Element Is Visible    ${bankNameEnFieldTitleTH}    10s
-    Wait Until Element Is Visible    ${bankNameThFieldTitleTH}    10s 
-    Wait Until Element Is Visible    ${accountNoFieldTitleTH}    10s  
+    Wait Until Element Is Visible    ${bankBookTitle}
+    Wait Until Element Is Visible    ${bankSectionTH}
+    Wait Until Element Is Visible    ${bankBookSectionTH}   
+    Wait Until Element Is Visible    ${bankCodeFieldTitleTH}   
+    Wait Until Element Is Visible    ${branchFieldTitleTH}   
+    Wait Until Element Is Visible    ${accountNameFieldTitleTH}     
+    Wait Until Element Is Visible    ${bankNameEnFieldTitleTH}   
+    Wait Until Element Is Visible    ${bankNameThFieldTitleTH}    
+    Wait Until Element Is Visible    ${accountNoFieldTitleTH}   
 
 Verify The Field In Bank Book EN
     Select Eng Language
-    Wait Until Element Is Visible    ${bankBookTitle}    20s
-    Wait Until Element Is Visible    ${bankSectionEN}    20s
-    Wait Until Element Is Visible    ${bankBookSectionEN}    20s
-    Wait Until Element Is Visible    ${bankCodeFieldTitleEN}    10s
-    Wait Until Element Is Visible    ${branchFieldTitleEN}    10s
-    Wait Until Element Is Visible    ${accountNameFieldTitleEN}    10s    
-    Wait Until Element Is Visible    ${bankNameEnFieldTitleEN}    10s
-    Wait Until Element Is Visible    ${bankNameThFieldTitleEN}    10s 
-    Wait Until Element Is Visible    ${accountNoFieldTitleEN}    10s  
+    Wait Until Element Is Visible    ${bankBookTitle}  
+    Wait Until Element Is Visible    ${bankSectionEN}  
+    Wait Until Element Is Visible    ${bankBookSectionEN}   
+    Wait Until Element Is Visible    ${bankCodeFieldTitleEN} 
+    Wait Until Element Is Visible    ${branchFieldTitleEN}  
+    Wait Until Element Is Visible    ${accountNameFieldTitleEN}  
+    Wait Until Element Is Visible    ${bankNameEnFieldTitleEN}
+    Wait Until Element Is Visible    ${bankNameThFieldTitleEN}
+    Wait Until Element Is Visible    ${accountNoFieldTitleEN} 
 
 Edit Bank Book EN
     Input Text    ${bankCodeFieldEN}     ;>?Enปิ่น-_-1234$#
