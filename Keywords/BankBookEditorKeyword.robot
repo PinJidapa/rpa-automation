@@ -5,7 +5,7 @@ Resource        ../Page/CommonPage.robot
 Resource        ../Resourses/TestData/${env}/config.robot
 
 *** Keywords ***
-Verify Element In Book Bank Page
+Preview And Edit Book Bank OCR
     [Arguments]    ${language1}    ${language2}
     Select Language For BookBank And Verify The Field    ${language1}
     Select Language For BookBank And Verify The Field    ${language2}
