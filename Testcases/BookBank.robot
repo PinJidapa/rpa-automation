@@ -12,5 +12,4 @@ TS-001 Verify Upload Document Page
     ...    ${password1}
     Upload Document On Document Page
     ...    Bank book
-    Verify Element In Book Bank Page    "EN"
-    Verify Element In Book Bank Page    "TH"
+    Verify Element In Book Bank Page    "EN"    "TH"

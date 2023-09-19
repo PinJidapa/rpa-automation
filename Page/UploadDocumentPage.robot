@@ -12,7 +12,7 @@ ${documentInputDropDown}    //*[@id="document-autocomplete"]
 ${loadingIcon}     //*[@id="table-component"]/tbody/tr[1]/td[5]/div/span
 ${firstEditButton}    //tbody/tr[1]/td[6]/div[1]/button[1]
 ${editButton}    //tbody/tr[1]/td[6]/div[1]/button[2]/*[1]
-# ${midrow}        //*[@id="table-component"]/tbody/tr[9]
+${completeButton}        //tbody/tr[1]/td[5]/div[1]/*[1]
 
 
 *** Keywords ***
@@ -44,5 +44,6 @@ Click Review The Document
 
 Check The Status Change To Complete
     # Run Keyword And Ignore Error    Scroll Element Into View    ${editButton}
+    Wait Until Element Is Visible    ${completeButton}    10s
     Wait Until Element Is Enabled    ${editButton}    30s
     Click Element    ${editButton}
