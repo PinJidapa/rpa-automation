@@ -44,7 +44,6 @@ Click Review The Document
     Click Element    ${FirstEditButton}
 
 Check The Status Change To Complete
-    # Run Keyword And Ignore Error    Scroll Element Into View    ${editButton}
     Wait Until Element Is Visible    ${completeButton}    10s
   
 Click Download Excel
