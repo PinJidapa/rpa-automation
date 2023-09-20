@@ -1,5 +1,5 @@
 *** Settings ***
-Resource    ../Page/languagePage.robot
+Resource    ../Page/LanguagePage.robot
 Library           SeleniumLibrary
 
 *** Variables ***
