@@ -1,6 +1,7 @@
 *** Settings ***
 Resource    ../Keywords/Utils.robot
 Library     SeleniumLibrary
+Library     OperatingSystem
 
 *** Variables ***
 ${documentLabel}    //h6[contains(text(),'Upload Documents')]
@@ -14,7 +15,6 @@ ${firstEditButton}    //tbody/tr[1]/td[7]/div[1]/button[1]
 ${optionButton}    //tbody/tr[1]/td[7]/div[1]/button[2]/*[1]
 ${tableFirstRow}    //table[@id='table-component']//tbody/tr[1]/td[6]
 ${downloadToExcelButton}    //p[contains(text(),'Download Excel')]
-
 
 *** Keywords ***
 Verify Document Page
