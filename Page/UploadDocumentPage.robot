@@ -9,10 +9,16 @@ ${selectDocumentInput}   //*[@id="document-autocomplete"]
 ${submitBtn}    //*[@id="document-submit"]
 ${uploadArea}    //*[@id="document-upload"]/input
 ${documentInputDropDown}    //*[@id="document-autocomplete"]
-${loadingIcon}     //*[@id="table-component"]/tbody/tr[1]/td[5]/div/span
-${firstEditButton}    //tbody/tr[1]/td[6]/div[1]/button[1]
-${editButton}    //tbody/tr[1]/td[6]/div[1]/button[2]/*[1]
-${completeButton}        //tbody/tr[1]/td[5]/div[1]/*[1]
+${loadingIcon}     //*[@id="table-component"]/tbody/tr[1]/td[6]/div/span/svg
+#//*[@id="table-component"]/tbody/tr[1]/td[6]/div/span/svg/circle
+#//*[@id="table-component"]/tbody/tr[1]/td[5]/div/span
+# //*[@id="table-component"]/tbody/tr[1]/td[6]/div
+# //*[@id="table-component"]/tbody/tr[1]/td[6]/div/span/svg
+${firstEditButton}    //tbody/tr[1]/td[7]/div[1]/button[1]
+${optionButton}    //tbody/tr[1]/td[7]/div[1]/button[2]/*[1]
+${tableFirstRow}    //table[@id='table-component']//tbody/tr[1]/td[6]
+# //svg["data-testid"="CheckCircleIcon"] 
+#//tbody/tr[1]/td[6]/div[1]/*[1]
 ${downloadToExcelButton}    //p[contains(text(),'Download Excel')]
 
 
@@ -28,7 +34,7 @@ Select Document Type
     Wait Until Element Is Visible    ${documentInputDropDown}    15s
     Wait Until Element Is Enabled    ${selectDocumentInput}    15s
     Input Text    ${selectDocumentInput}    ${value}
-    Press Keys    ${selectDocumentInput}    ARROW_DOWN     ENTER
+    Press Keys    ${selectDocumentInput}    ARROW_DOWN     ENTER    15s
 
 Upload Document File
     Choose File    ${UploadArea}      ${EXECDIR}/Resourses/TestData/bookBank/bookbank1.jpg
@@ -37,16 +43,25 @@ Click Submit Button
     Run Until Keyword Succeed  Click Element    ${SubmitBtn}
     
 Click Review The Document
-    Sleep    2s
-    Run Keyword And Ignore Error    Scroll Element Into View    ${LoadingIcon}
-    Wait Until Element Is Visible    ${LoadingIcon}   10s
+    
+    ${elem}=    Get Text    ${tableFirstRow}
+    WHILE  '${elem}' != 'In progress'
+        ${elem}=    Get Text    ${tableFirstRow}
+    END
+
+    Wait Until Page Contains    ${elem}
     Wait Until Element Is Enabled    ${FirstEditButton}    30s
     Click Element    ${FirstEditButton}
 
 Check The Status Change To Complete
-    Wait Until Element Is Visible    ${completeButton}    10s
+    Sleep    5s
+    ${elem}=    Get Text    ${tableFirstRow}
+    WHILE  '${elem}' != 'Completed'
+        ${elem}=    Get Text    ${tableFirstRow}
+    END
+    Wait Until Page Contains    ${elem}
   
-Click Download Excel
-    Wait Until Element Is Enabled    ${editButton}    30s
-    Click Element    ${editButton}
+#Click Download Excel
+    Wait Until Element Is Enabled    ${optionButton}    30s
+    Click Element    ${optionButton}
     Run Until Keyword Succeed  Click Element    ${downloadToExcelButton} 
