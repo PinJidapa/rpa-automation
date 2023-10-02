@@ -10,15 +10,9 @@ ${submitBtn}    //*[@id="document-submit"]
 ${uploadArea}    //*[@id="document-upload"]/input
 ${documentInputDropDown}    //*[@id="document-autocomplete"]
 ${loadingIcon}     //*[@id="table-component"]/tbody/tr[1]/td[6]/div/span/svg
-#//*[@id="table-component"]/tbody/tr[1]/td[6]/div/span/svg/circle
-#//*[@id="table-component"]/tbody/tr[1]/td[5]/div/span
-# //*[@id="table-component"]/tbody/tr[1]/td[6]/div
-# //*[@id="table-component"]/tbody/tr[1]/td[6]/div/span/svg
 ${firstEditButton}    //tbody/tr[1]/td[7]/div[1]/button[1]
 ${optionButton}    //tbody/tr[1]/td[7]/div[1]/button[2]/*[1]
 ${tableFirstRow}    //table[@id='table-component']//tbody/tr[1]/td[6]
-# //svg["data-testid"="CheckCircleIcon"] 
-#//tbody/tr[1]/td[6]/div[1]/*[1]
 ${downloadToExcelButton}    //p[contains(text(),'Download Excel')]
 
 
@@ -61,7 +55,7 @@ Check The Status Change To Complete
     END
     Wait Until Page Contains    ${elem}
   
-#Click Download Excel
+Click Download Excel
     Wait Until Element Is Enabled    ${optionButton}    30s
     Click Element    ${optionButton}
-    Run Until Keyword Succeed  Click Element    ${downloadToExcelButton} 
+    Run Until Keyword Succeed  Click Element    ${downloadToExcelButton}
