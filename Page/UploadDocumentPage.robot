@@ -37,7 +37,6 @@ Click Submit Button
     Run Until Keyword Succeed  Click Element    ${SubmitBtn}
     
 Click Review The Document
-    
     ${elem}=    Get Text    ${tableFirstRow}
     WHILE  '${elem}' != 'In progress'
         ${elem}=    Get Text    ${tableFirstRow}
@@ -59,3 +58,4 @@ Click Download Excel
     Wait Until Element Is Enabled    ${optionButton}    30s
     Click Element    ${optionButton}
     Run Until Keyword Succeed  Click Element    ${downloadToExcelButton}
+    Sleep    10s

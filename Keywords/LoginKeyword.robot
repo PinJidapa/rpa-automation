@@ -15,15 +15,13 @@ Open Browser And Sign In With Username And Password
 
     # Specify the Chrome preferences
     ${chrome_prefs}=    Create Dictionary
-    Set To Dictionary    ${chrome_prefs}    download.default_directory    /Users/pinpinn/rpa-automation/Excel
+    Set To Dictionary    ${chrome_prefs}    download.default_directory     ${EXECDIR}/assets
 
     # Set the preferences in Chrome options
     Call Method    ${chrome_options}    add_experimental_option    prefs    ${chrome_prefs}
 
-    #/Users/pinpinn/rpa-automation/Excel
     Open Browser    ${url}    browser=chrome    options=${chrome_options}
    
-
     Set Window Position    0    0
     Maximize Browser Window
     Enter Username    ${username}

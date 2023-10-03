@@ -4,6 +4,7 @@ Resource     ../Keywords/LoginKeyword.robot
 Resource    ../Keywords/UploadDocumentKeyword.robot
 Resource    ../Keywords/BankBookEditorKeyword.robot
 Resource    ../Resourses/TestData/${env}/UserLogin.robot
+Library     ../Scripts/functions.py
 
 *** Test Cases ***
 TS-001 Verify Upload Document Page
@@ -12,4 +13,4 @@ TS-001 Verify Upload Document Page
     ...    ${password1}
     Upload Document On Document Page
     ...    Bank book
-    Preview And Edit Book Bank OCR    "EN"    "TH"
+    Preview And Edit Book Bank OCR Then Check Excel File    "EN"    "TH"

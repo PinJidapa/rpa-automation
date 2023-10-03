@@ -1,6 +1,7 @@
 *** Settings ***
 Resource    ../Page/LanguagePage.robot
 Library           SeleniumLibrary
+Library     ../Scripts/functions.py
 
 *** Variables ***
 #BankBook Title
@@ -38,7 +39,6 @@ ${accuntNameEnFieldTH}      //textarea[@data-label="ชื่อธนาคา�
 #Eng Field
 ${branchCodeFieldEn}    //textarea[@data-label="Branch code"]
 ${accuntNameEnFieldEn}    //textarea[@data-label="Account name (EN)"]
-
 
 *** Keywords ***
 
@@ -89,3 +89,9 @@ Edit Bank Book EN
 Edit Bank Book TH
     Input Text    ${branchCodeFieldTH}      Thปิ่น-_-1234$#;>?
     Input Text    ${accuntNameEnFieldTH}     ;>?Thนภ-_-1234$#
+
+Check The Book Bank Excel File
+    ${correctDataList}=     Create List
+    ...    {"รหัสสาขา": "Thปิ่น-_-1234$#;>?","ชื่อธนาคาร (ภาษาอังกฤษ)": ";>?Thนภ-_-1234$#","ชื่อธนาคาร (ภาษาไทย)": "ธนาคารไทยพาณิชย์","ชื่อสาขา (ภาษาอังกฤษ)": None,"ชื่อสาขา (ภาษาไทย)": None,"ชื่อบัญชี (ภาษาอังกฤษ)": ";>?Enนภ-_-1234$#","ชื่อบัญชี (ภาษาไทย)": None,"เลขที่บัญชี": "962-240326-4","ประเภทบัญชี (ภาษาอังกฤษ)": None,"ประเภทบัญชี (ภาษาไทย)": None,"รหัสธนาคาร": "SCB" }
+    ${compare}    functions.compare     ${correctDataList}    ${EXECDIR}/assets/bookbank1.xlsx
+    Should Be True    ${compare}
