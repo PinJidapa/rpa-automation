@@ -14,6 +14,7 @@ ${loadingIcon}     //*[@id="table-component"]/tbody/tr[1]/td[6]/div/span/svg
 ${firstEditButton}    //tbody/tr[1]/td[7]/div[1]/button[1]
 ${optionButton}    //tbody/tr[1]/td[7]/div[1]/button[2]/*[1]
 ${tableFirstRow}    //table[@id='table-component']//tbody/tr[1]/td[6]
+${tableThirdRow}    //table[@id='table-component']//tbody/tr[3]
 ${downloadToExcelButton}    //p[contains(text(),'Download Excel')]
 
 *** Keywords ***
@@ -47,6 +48,7 @@ Click Submit Button
     Run Until Keyword Succeed  Click Element    ${SubmitBtn}
     
 Click Review The Document
+    Scroll Element Into View    ${tableThirdRow}
     ${elem}=    Get Text    ${tableFirstRow}
     WHILE  '${elem}' != 'In progress'
         ${elem}=    Get Text    ${tableFirstRow}
@@ -65,6 +67,7 @@ Check The Status Change To Complete
     Wait Until Page Contains    ${elem}
   
 Click Download Excel
+    Scroll Element Into View    ${tableThirdRow}
     Wait Until Element Is Enabled    ${optionButton}    30s
     Click Element    ${optionButton}
     Run Until Keyword Succeed  Click Element    ${downloadToExcelButton}
