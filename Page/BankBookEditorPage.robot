@@ -39,7 +39,6 @@ ${accuntNameEnFieldTH}      //textarea[@data-label="ชื่อธนาคา�
 ${branchCodeFieldEn}    //textarea[@data-label="Branch code"]
 ${accuntNameEnFieldEn}    //textarea[@data-label="Account name (EN)"]
 
-
 *** Keywords ***
 
 Select Language For BookBank And Verify The Field

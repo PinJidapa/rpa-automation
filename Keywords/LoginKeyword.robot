@@ -15,7 +15,7 @@ Open Browser And Sign In With Username And Password
 
     # Specify the Chrome preferences
     ${chrome_prefs}=    Create Dictionary
-    Set To Dictionary    ${chrome_prefs}    download.default_directory     ${EXECDIR}/Assets
+    Set To Dictionary    ${chrome_prefs}    download.default_directory     ${EXECDIR}/assets
 
     # Set the preferences in Chrome options
     Call Method    ${chrome_options}    add_experimental_option    prefs    ${chrome_prefs}
