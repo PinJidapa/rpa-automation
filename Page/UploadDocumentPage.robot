@@ -31,7 +31,17 @@ Select Document Type
     Press Keys    ${selectDocumentInput}    ARROW_DOWN     ENTER    15s
 
 Upload Document File
+    [Arguments]   ${value}
+    Run Keyword If    "${value}" == "Bank book"
+    ...        Upload Book Bank Document File
+    ...    ELSE IF    "${value}" == "Truck Registration Document OCR - Registration Page"
+    ...        Upload Truck Registration Document File
+        
+Upload Book Bank Document File
     Choose File    ${UploadArea}      ${EXECDIR}/Resourses/TestData/bookBank/bookbank1.jpg
+
+Upload Truck Registration Document File
+    Choose File    ${UploadArea}      ${EXECDIR}/Resourses/TestData/truckRegis/truckRegist1.jpg
 
 Click Submit Button
     Run Until Keyword Succeed  Click Element    ${SubmitBtn}
