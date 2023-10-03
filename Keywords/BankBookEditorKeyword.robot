@@ -12,4 +12,3 @@ Preview And Edit Book Bank OCR
     Click Submit Button On editor Page
     Check The Status Change To Complete
     Click Download Excel
-    Sleep   20s
