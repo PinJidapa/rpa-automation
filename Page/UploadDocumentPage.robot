@@ -29,7 +29,7 @@ Select Document Type
     Wait Until Element Is Visible    ${documentInputDropDown}    15s
     Wait Until Element Is Enabled    ${selectDocumentInput}    15s
     Input Text    ${selectDocumentInput}    ${value}
-    Press Keys    ${selectDocumentInput}    ARROW_DOWN     ENTER    15s
+    Press Keys    ${selectDocumentInput}    ARROW_DOWN     ENTER
 
 Upload Document File
     [Arguments]   ${value}
@@ -37,12 +37,18 @@ Upload Document File
     ...        Upload Book Bank Document File
     ...    ELSE IF    "${value}" == "Truck Registration Document OCR - Registration Page"
     ...        Upload Truck Registration Document File
+    ...    ELSE IF    "${value}" == "Thailand ID Card OCR - Front"
+    ...        Upload Thailand ID Card File
         
 Upload Book Bank Document File
     Choose File    ${UploadArea}      ${EXECDIR}/Resourses/TestData/bookBank/bookbank1.jpg
 
 Upload Truck Registration Document File
     Choose File    ${UploadArea}      ${EXECDIR}/Resourses/TestData/truckRegis/truckRegist1.jpg
+
+Upload Thailand ID Card File
+    Choose File     ${UploadArea}    ${EXECDIR}/Resourses/TestData/frontIdCard/frontIdCard1.png
+    Choose File     ${UploadArea}    ${EXECDIR}/Resourses/TestData/frontIdCard/frontIdCard2.JPG
 
 Click Submit Button
     Run Until Keyword Succeed  Click Element    ${SubmitBtn}
@@ -59,7 +65,7 @@ Click Review The Document
     Click Element    ${FirstEditButton}
 
 Check The Status Change To Complete
-    Sleep    5s
+    Wait Until Element Is Visible   ${tableFirstRow}    30s 
     ${elem}=    Get Text    ${tableFirstRow}
     WHILE  '${elem}' != 'Completed'
         ${elem}=    Get Text    ${tableFirstRow}
@@ -67,7 +73,7 @@ Check The Status Change To Complete
     Wait Until Page Contains    ${elem}
   
 Click Download Excel
-    Scroll Element Into View    ${tableThirdRow}
+    # Scroll Element Into View    ${tableThirdRow}
     Wait Until Element Is Enabled    ${optionButton}    30s
     Click Element    ${optionButton}
     Run Until Keyword Succeed  Click Element    ${downloadToExcelButton}
