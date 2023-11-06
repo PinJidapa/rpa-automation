@@ -37,12 +37,17 @@ Upload Document File
     ...        Upload Book Bank Document File
     ...    ELSE IF    "${value}" == "Truck Registration Document OCR - Registration Page"
     ...        Upload Truck Registration Document File
+    ...    ELSE IF    "${value}" == "Thailand ID Card OCR - Back"
+    ...        Upload Back Id Card Document File
         
 Upload Book Bank Document File
     Choose File    ${UploadArea}      ${EXECDIR}/Resourses/TestData/bookBank/bookbank1.jpg
 
 Upload Truck Registration Document File
     Choose File    ${UploadArea}      ${EXECDIR}/Resourses/TestData/truckRegis/truckRegist1.jpg
+
+Upload Back Id Card Document File
+    Choose File    ${UploadArea}      ${EXECDIR}/Resourses/TestData/backIdCard/thai_id_back.jpg   
 
 Click Submit Button
     Run Until Keyword Succeed  Click Element    ${SubmitBtn}

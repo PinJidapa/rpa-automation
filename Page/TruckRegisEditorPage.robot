@@ -5,7 +5,7 @@ Library     ../Scripts/functions.py
 
 *** Variables ***
 #BankBook Title
-${truckRegisTitle}    //p[contains(text(),'Truck Registration Document OCR - Registration Pag')]
+${truckRegisTitle}    //p[contains(text(),'Truck Registration Document OCR - Registration Page')]
 
 #Thai
 ${registerDateTH}   //p[contains(text(),'วันจดทะเบียน')]
