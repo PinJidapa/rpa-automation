@@ -14,6 +14,4 @@ TS-001 Verify Upload Document Page
     ...    ${password1}
     Upload Document On Document Page
     ...    Truck Registration Document OCR - Registration Page
-    Sleep    10s
-    Click Many Save And Submit Button
-    # Preview And Edit Truck Registration OCR Then Check Excel File    "EN"    "TH"
+    Preview And Edit Truck Registration OCR Then Check Excel File    "EN"    "TH"
