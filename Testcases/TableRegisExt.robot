@@ -16,4 +16,4 @@ TS-001 Verify Upload Document Page
     Click Many Save Button
     ...    8
     Click Submit Button On editor Page 
-    Sleep    10s
+    
