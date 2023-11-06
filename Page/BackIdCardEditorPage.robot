@@ -13,7 +13,6 @@ ${laserCodeTH}    //p[contains(text(),'เลขหลังบัตร')]
 #Eng
 ${laserCodeEN}    //p[contains(text(),'Laser Code')]
 
-
 #Thai Field 
 ${laserCodeFieldTH}        //textarea[@data-label="เลขหลังบัตร"]
 #Eng Field
