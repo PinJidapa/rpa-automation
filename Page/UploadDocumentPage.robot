@@ -29,7 +29,7 @@ Select Document Type
     Wait Until Element Is Visible    ${documentInputDropDown}    15s
     Wait Until Element Is Enabled    ${selectDocumentInput}    15s
     Input Text    ${selectDocumentInput}    ${value}
-    Press Keys    ${selectDocumentInput}    ARROW_DOWN     ENTER    15s
+    Press Keys    ${selectDocumentInput}    ARROW_DOWN     ENTER
 
 Upload Document File
     [Arguments]   ${value}
@@ -39,6 +39,8 @@ Upload Document File
     ...        Upload Truck Registration Document File
     ...    ELSE IF    "${value}" == "Thailand ID Card OCR - Back"
     ...        Upload Back Id Card Document File
+    ...    ELSE IF    "${value}" == "Table Information Extraction"
+    ...        Upload Table Information Extraction Document File
         
 Upload Book Bank Document File
     Choose File    ${UploadArea}      ${EXECDIR}/Resourses/TestData/bookBank/bookbank1.jpg
@@ -48,6 +50,9 @@ Upload Truck Registration Document File
 
 Upload Back Id Card Document File
     Choose File    ${UploadArea}      ${EXECDIR}/Resourses/TestData/backIdCard/thai_id_back.jpg   
+
+Upload Table Information Extraction Document File
+    Choose File    ${UploadArea}      ${EXECDIR}/Resourses/TestData/table/table.pdf
 
 Click Submit Button
     Run Until Keyword Succeed  Click Element    ${SubmitBtn}
@@ -60,7 +65,7 @@ Click Review The Document
     END
 
     Wait Until Page Contains    ${elem}
-    Wait Until Element Is Enabled    ${FirstEditButton}    30s
+    Wait Until Element Is Enabled    ${FirstEditButton}    180s
     Click Element    ${FirstEditButton}
 
 Check The Status Change To Complete
